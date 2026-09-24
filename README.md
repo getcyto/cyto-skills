@@ -1,5 +1,7 @@
 # Cyto skills
 
+`// we build adaptive systems`
+
 Free skills for Claude Code and Codex, from the Cyto lab. Small files that make your agent make better decisions.
 
 Keep missing data honest. Give a calculation one home. Finish long jobs with
