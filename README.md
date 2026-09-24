@@ -2,75 +2,51 @@
 
 `// we build adaptive systems`
 
-Free skills for Claude Code and Codex, from the Cyto lab. Small files that make your agent make better decisions.
+Free skills for Claude Code and Codex. Small files that help your agent make better decisions. Each one exists because something broke without it.
 
-Keep missing data honest. Give a calculation one home. Finish long jobs with
-a clear outcome. Carry context into a handoff. Choose web effects that fit.
-Check every legal citation before it leaves your hands.
-
-| Skill | What it helps with |
+| Skill | What it does |
 |---|---|
-| absent-is-not-zero | Keep zero, missing data, and failed measurements distinct |
-| one-place-to-be-wrong | Stop the same business rule drifting across two implementations |
-| supervise | Give a long job a measured budget, progress checks, and an ending |
-| context-does-not-travel | Make agent handoffs explicit and their results verifiable |
-| web-design-patterns | Match layout and motion to the visitor's task |
-| cite-gate | Hold legal writing until every cite exists, says it, is still good law, and is in form |
+| [absent-is-not-zero](skills/absent-is-not-zero) | Keeps zero, missing data and failed measurements distinct |
+| [one-place-to-be-wrong](skills/one-place-to-be-wrong) | Stops one business rule drifting across two implementations |
+| [supervise](skills/supervise) | Gives a long job a budget, progress checks and a clear ending |
+| [context-does-not-travel](skills/context-does-not-travel) | Makes agent handoffs explicit and their results verifiable |
+| [web-design-patterns](skills/web-design-patterns) | Matches layout and motion to the visitor's task |
+| [cite-gate](skills/cite-gate) | Holds legal writing until every cite exists, says it, is still good law and is in form |
 
 ## Install
 
-Clone or download this repo, then open `skills`. Copy the skill
-folders you want, including their contents, into the location for your app:
+Claude Code:
 
-| App | Personal skills folder |
-|---|---|
-| Claude Code | `~/.claude/skills/` |
-| Codex | `~/.agents/skills/` |
+```sh
+git clone https://github.com/getcyto/cyto-skills.git
+mkdir -p ~/.claude/skills && cp -R cyto-skills/skills/* ~/.claude/skills/
+```
 
-Create the destination folder if needed. If a folder with the same name
-already exists, compare it before replacing it.
+Codex:
 
-For example, the installed entry should be
-`~/.claude/skills/absent-is-not-zero/SKILL.md` or
-`~/.agents/skills/absent-is-not-zero/SKILL.md`.
-Copy each skill folder, not the outer bundle folder. Keep `techniques.md`
-beside `web-design-patterns/SKILL.md`.
+```sh
+git clone https://github.com/getcyto/cyto-skills.git
+mkdir -p ~/.agents/skills && cp -R cyto-skills/skills/* ~/.agents/skills/
+```
 
-These paths work on macOS, Linux, and Windows with WSL. For a project-only
-install, use `.claude/skills/` or `.agents/skills/` inside that project.
+Want only one? Copy that one folder. For a single project, copy into `.claude/skills/` or `.agents/skills/` inside the project instead. If a skill with the same name is already installed, compare before replacing.
 
-Installation references:
-[Claude Code skills](https://code.claude.com/docs/en/skills) and
-[OpenAI skill documentation](https://learn.chatgpt.com/docs/build-skills).
+Docs: [Claude Code skills](https://code.claude.com/docs/en/skills) · [Codex skills](https://developers.openai.com/codex/skills)
 
 ## Try one
-
-In Claude Code:
 
 ```text
 /absent-is-not-zero review this parser's missing-data handling
 ```
 
-In Codex CLI or the IDE:
+In Codex, use `$absent-is-not-zero`. You can also just ask your agent to use a skill by name. Start a new session if it does not show up.
 
-```text
-$absent-is-not-zero review this parser's missing-data handling
-```
-
-You can also ask your agent to use a skill by name. Start a new session if it
-does not appear.
-
-The same files work with either app. Your app controls which tools and agent
-capabilities are available. These are instructions, not a background service
-or additional permissions. Each skill works on its own.
+These are plain instructions: no background service and no extra permissions.
 
 ## Community
 
-These came out of real work, and each one exists because something broke
-without it. If a skill saved you, or failed you, open an issue and say how.
-New skills are welcome: see CONTRIBUTING.md.
+If a skill saved you, or failed you, [open an issue](https://github.com/getcyto/cyto-skills/issues) and say how. New skills are welcome: see [CONTRIBUTING.md](CONTRIBUTING.md).
 
-Want one built for your team, wired into your own tools, with the security
-done alongside? That's Cyto+: [getcyto.ai](https://getcyto.ai).
+Want one built for your team, wired into your own tools, with the security done alongside? That's Cyto+ at [getcyto.ai](https://getcyto.ai).
 
-From [Cyto](https://getcyto.ai).
+MIT licensed. From [Cyto](https://getcyto.ai), an Adaptive Intelligence Systems company.
